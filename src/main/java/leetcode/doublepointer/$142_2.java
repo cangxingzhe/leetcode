@@ -1,42 +1,46 @@
 package leetcode.doublepointer;
 
-public class $142 {
+public class $142_2 {
 
     public static void main(String[] args) {
         ListNode node2 = new ListNode(2);
         ListNode node1 = new ListNode(1, node2);
         node2.next = node1;
-        System.out.println(new $142().detectCycle(node1));
+        System.out.println(new $142_2().detectCycle(node1));
 
     }
+
     public ListNode detectCycle(ListNode head) {
-        ListNode fast = head;
         ListNode slow = head;
+        ListNode fast = head;
         do {
             if(fast == null || fast.next == null) return null;
             fast = fast.next.next;
             slow = slow.next;
-        }while (fast != slow);
+        } while(slow != fast);
+
         fast = head;
-        while(fast != slow) {
-            fast = fast.next;
+        do {
             slow = slow.next;
-        }
+            fast = fast.next;
+        } while(slow != fast);
         return fast;
 
     }
 
-    static class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) {
-          val = x;
-          next = null;
-      }
-        public ListNode(int x, ListNode next) {
-            val = x;
-            this.next = next;
-        }
+
+
+    public static class ListNode {
+       int val;
+       ListNode next;
+        public ListNode(int x) {
+           val = x;
+           next = null;
+       }
+       public ListNode(int x, ListNode next) {
+           val = x;
+           this.next = next;
+       }
 
         @Override
         public String toString() {
@@ -44,5 +48,5 @@ public class $142 {
                     "val=" + val +
                     '}';
         }
-  }
+    }
 }
