@@ -6,7 +6,7 @@ public class $34 {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(new $34()
-                .searchRange(new int[]{1,1,2}, 1)));
+                .searchRange(new int[]{5, 7, 7, 8, 8, 10}, 8)));
     }
 
     public int[] searchRange(int[] nums, int target) {
