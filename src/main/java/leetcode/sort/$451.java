@@ -1,8 +1,7 @@
-package leetcode;
+package leetcode.sort;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class $451 {
     public String frequencySort(String s) {
